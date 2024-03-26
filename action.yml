@@ -1,0 +1,19 @@
+name: 'Upload packages to Anaconda cloud action'
+description: 'Upload conda packages'
+author: 'marek-mihok'
+branding:
+  icon: 'upload-cloud'  
+  color: 'yellow'
+inputs: 
+  CondaUsername:
+    description: 'conda Username'
+    required: true
+  CondaPassword:
+    description: 'conda Password'
+    required: true
+  PackagesDir:
+    description: 'Directory containing tarball (.tar.bz2) files'
+    default: 'sdist'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
